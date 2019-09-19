@@ -3,7 +3,6 @@ import { Box, Button, Grommet, Heading, Image, ResponsiveContext, Layer } from '
 import { Menu, FormClose, DocumentPdf, Projects, Linkedin } from 'grommet-icons';
 import byuLogo from './byu-logo.png';
 import resume from './Spencer_Seeger_Resume.pdf';
-import { nullLiteral } from '@babel/types';
 
 const theme = {
 	global: {
