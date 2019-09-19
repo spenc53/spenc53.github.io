@@ -1,14 +1,15 @@
 {
   "files": {
-    "main.js": "/static/js/main.199f1ec7.chunk.js",
-    "main.js.map": "/static/js/main.199f1ec7.chunk.js.map",
+    "main.js": "/static/js/main.2636aca0.chunk.js",
+    "main.js.map": "/static/js/main.2636aca0.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.ac53febd.js",
     "runtime~main.js.map": "/static/js/runtime~main.ac53febd.js.map",
-    "static/js/2.45a11f75.chunk.js": "/static/js/2.45a11f75.chunk.js",
-    "static/js/2.45a11f75.chunk.js.map": "/static/js/2.45a11f75.chunk.js.map",
+    "static/js/2.236161c4.chunk.js": "/static/js/2.236161c4.chunk.js",
+    "static/js/2.236161c4.chunk.js.map": "/static/js/2.236161c4.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.408a18096a4f45699f55862dc288f16b.js": "/precache-manifest.408a18096a4f45699f55862dc288f16b.js",
+    "precache-manifest.41d45640fd9cb209ba5d8439cfa2385d.js": "/precache-manifest.41d45640fd9cb209ba5d8439cfa2385d.js",
     "service-worker.js": "/service-worker.js",
-    "static/media/background1.jpeg": "/static/media/background1.6a2f4990.jpeg"
+    "static/media/background1.jpeg": "/static/media/background1.6a2f4990.jpeg",
+    "static/media/byu-logo.png": "/static/media/byu-logo.8c826474.png"
   }
 }
