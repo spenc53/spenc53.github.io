@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import { Box, Button, Grommet, Heading, Image, ResponsiveContext, Layer } from 'grommet';
+import { Box, Button, Grommet, Heading, Image, ResponsiveContext, Layer, Collapsible, Paragraph, Tab } from 'grommet';
 import { Menu, FormClose, DocumentPdf, Projects, Linkedin } from 'grommet-icons';
-import byuLogo from './byu-logo.png';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+
+import HomePage from './pages/home/HomePage';
+
 import resume from './Spencer_Seeger_Resume.pdf';
 
 const theme = {
@@ -39,7 +42,8 @@ class App extends Component {
 		super();
 
 		this.state = {
-			showSidebar: false
+			showSidebar: false,
+			showResume: false
 		}
 
 		this.SideNav = this.SideNav.bind(this);
@@ -48,108 +52,62 @@ class App extends Component {
 
 	render() {
 		return (
-			<Grommet theme={theme} full>
-				<ResponsiveContext.Consumer>
-					{size => (
-						<Box fill background={{ dark: true, color: "accent-1" }} overflow={{ horizontal: "hidden" }}>
-							<Box full={false} flex>
-								<AppBar>
-									<Heading margin="none" level="2">
-										Spencer Seeger
-								</Heading>
-									{size !== "small" ? (
-										<Box direction="row">
-											<Heading
-												margin={{
-													horizontal: "small",
-													vertical: "none"
-												}}
-												level="4"
-											>
-												Projects
-										</Heading>
-											<Heading
-												margin={{
-													horizontal: "small",
-													vertical: "none"
-												}}
-												level="4"
-											>
-												Resume
-										</Heading>
-										</Box>
-									) : <Button icon={<Menu />} onClick={() => this.setState({showSidebar: true})}/>}
-								</AppBar>
-								<Box margin={{ horizontal: "small" }} align="center">
-									<Box align="center">
-										<Heading level="1">Spencer Seeger</Heading>
-										<Box align="center" width="medium">
-										</Box>
-									</Box>
-									<Box
-										round
-										background="accent-2"
-										width="small"
-										height="small"
-										align="center"
-										justify="center"
-									>
-										<Box
-											round="full"
-											width="xsmall"
-											height="xsmall"
-											background="accent-1"
-										></Box>
-									</Box>
-									<Box align='center' flex>
-										<Heading margin={{ top: "large", bottom: "none" }} level="1">Education</Heading>
-										<this.EducationSection size={size}></this.EducationSection>
+			<Grommet theme={theme} style={{height:"100%"}}>
+				<Router>
+					<ResponsiveContext.Consumer>
+						{size => (
+							<Box direction='row' fill background={{ dark: true, color: "accent-1" }} overflow={{ horizontal: "hidden" }}>
+								<Box flex>
+									<AppBar>
+										<Heading margin="none" level="2">
+											Spencer Seeger
+									</Heading>
+										<Button icon={<Menu />} onClick={() => this.setState({ showSidebar: !this.state.showSidebar })} />
+									</AppBar>
+									<Box fill>
+										<Switch>
+											<Route exact path="/" component={HomePage} />
+										</Switch>
 									</Box>
 								</Box>
+								<this.SideNav size={size} />
 							</Box>
-							<this.SideNav size={size} />
-						</Box>
-					)}
-				</ResponsiveContext.Consumer>
+						)}
+					</ResponsiveContext.Consumer>
+				</Router>
 			</Grommet>
 		);
 	}
 
-	EducationSection(props) {
-		if (props.size === "small") {
-			return (<Box align="center">
-				<Box align="center" width="large">
-					<Heading margin={{ top: "small", bottom: "none" }} level="2">Brigham Young Univeristy</Heading>
-					<Heading margin="none" level="5">Bachelor's in Computer Science</Heading>
-					<Heading margin="none" level="5">and Statistical Science</Heading>
-					<Heading margin="none" level="5">Minor in Mathmatics</Heading>
-					<Heading margin="none" level="5">2014-2018</Heading>
-				</Box>
-			</Box>);
-		}
-
-		return (
-			<Box direction="row" align="center" justify="center">
-				<Box justify="center" width="large">
-					<Heading margin={{ top: "small", bottom: "none" }} level="2">Brigham Young Univeristy</Heading>
-					<Heading margin="none" level="5">Bachelor's in Computer Science and Statistical Science</Heading>
-					<Heading margin="none" level="5">Minor in Mathmatics</Heading>
-					<Heading margin="none" level="5">2014-2018</Heading>
-				</Box>
-				<Box justify="center" width="xsmall" height="xsmall" round="full">
-					<Image fit="contain" src={byuLogo} />
-				</Box>
-			</Box>
-		);
-	}
-
 	SideNav(props) {
+		if (props.size !== "small") {
+			return (
+				<Collapsible direction="horizontal" open={this.state.showSidebar}>
+					<Box
+						flex
+						width="medium"
+						background='accent-2'
+					>
+						<Box margin={{ horizontal: "small" }}>
+							<Box margin="small" direction="row" align="center">
+								<Projects size="medium" />
+								<Heading margin="small" level="3">Projects</Heading>
+							</Box>
+							<Box margin="small" direction="row" align="center" onClick={() => window.open(resume, "_blank")}>
+								<DocumentPdf size="medium" />
+								<Heading margin="small" level="3">Resume</Heading>
+							</Box>
+							<Box margin="small" direction="row" align="center" onClick={() => window.open("https://www.linkedin.com/in/spencer-seeger-03a12a133/", "_blank")}>
+								<Linkedin size="medium" />
+								<Heading margin="small" level="3">Resume</Heading>
+							</Box>
+						</Box>
+					</Box>
+				</Collapsible>
+			);
+		}
 
 		if (!this.state.showSidebar) {
-			return null;
-		}
-
-		if (props.size !== "small" || !this.state.showSidebar) {
 			return null;
 		}
 
@@ -162,16 +120,16 @@ class App extends Component {
 					align="center"
 					direction="row"
 				>
-					<Button 
+					<Button
 						icon={<FormClose
-						size="large"/>}
-						onClick={() => this.setState({showSidebar: false})} />
+							size="large" />}
+						onClick={() => this.setState({ showSidebar: false })} />
 				</Box>
 				<Box
-					fill 
+					fill
 					background='accent-2'
 				>
-					<Box margin={{horizontal:"small"}}>
+					<Box margin={{ horizontal: "small" }}>
 						<Box margin="small" direction="row" align="center">
 							<Projects size="medium" />
 							<Heading margin="small" level="2">Projects</Heading>
