@@ -8,7 +8,7 @@ class HomePage extends Component {
         return (
             <ResponsiveContext.Consumer>
                 {size => (
-                    <Box fill margin={{ horizontal: "small" }} align="center">
+                    <Box flex margin={{ horizontal: "small" }} align="center">
                         <Box align="center">
                             <Heading level="1">Spencer Seeger</Heading>
                             <Box align="center" width="medium">

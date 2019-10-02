@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Box, Button, Grommet, Heading, Image, ResponsiveContext, Layer, Collapsible, Paragraph, Tab } from 'grommet';
+import { Box, Button, Grommet, Heading, ResponsiveContext, Layer, Collapsible } from 'grommet';
 import { Menu, FormClose, DocumentPdf, Projects, Linkedin } from 'grommet-icons';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import HomePage from './pages/home/HomePage';
 
@@ -52,21 +52,41 @@ class App extends Component {
 
 	render() {
 		return (
-			<Grommet theme={theme} style={{height:"100%"}}>
+			<Grommet theme={theme}>
 				<Router>
 					<ResponsiveContext.Consumer>
 						{size => (
-							<Box direction='row' fill background={{ dark: true, color: "accent-1" }} overflow={{ horizontal: "hidden" }}>
+							<Box
+								direction="row"
+								flex
+								background={{
+									dark: true,
+									color: "accent-1"
+								}}
+								overflow={{ horizontal: "hidden" }}
+							>
 								<Box flex>
 									<AppBar>
 										<Heading margin="none" level="2">
 											Spencer Seeger
-									</Heading>
-										<Button icon={<Menu />} onClick={() => this.setState({ showSidebar: !this.state.showSidebar })} />
+										</Heading>
+										<Button
+											icon={<Menu />}
+											onClick={() =>
+												this.setState({
+													showSidebar: !this.state
+														.showSidebar
+												})
+											}
+										/>
 									</AppBar>
 									<Box fill>
 										<Switch>
-											<Route exact path="/" component={HomePage} />
+											<Route
+												exact
+												path="/"
+												component={HomePage}
+											/>
 										</Switch>
 									</Box>
 								</Box>
@@ -80,6 +100,8 @@ class App extends Component {
 	}
 
 	SideNav(props) {
+    console.log(props.size);
+
 		if (props.size !== "small") {
 			return (
 				<Collapsible direction="horizontal" open={this.state.showSidebar}>
