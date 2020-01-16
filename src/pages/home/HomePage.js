@@ -62,14 +62,14 @@ class HomePage extends Component {
         }
 
         return (
-            <Box direction="row" align="center" justify="center">
-                <Box justify="center" width="large">
+            <Box direction="row" align="center" justify="center" width='large'>
+                <Box justify="center" margin={{right:'large'}}>
                     <Heading margin={{ top: "small", bottom: "none" }} level="2">Brigham Young Univeristy</Heading>
                     <Heading margin="none" level="5">Bachelor's in Computer Science and Statistical Science</Heading>
                     <Heading margin="none" level="5">Minor in Mathmatics</Heading>
                     <Heading margin="none" level="5">2014-2018</Heading>
                 </Box>
-                <Box justify="center" width="xsmall" height="xsmall" round="full">
+                <Box justify="center" width="xsmall" height="xsmall" round="full" margin={{left:'large'}}>
                     <Image fit="contain" src={byuLogo} />
                 </Box>
             </Box>

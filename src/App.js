@@ -83,7 +83,7 @@ class App extends Component {
 											}
 										/>
 									</AppBar>
-									<Box style={{width: '100%'}}>
+									<Box margin='small'>
 										<Switch>
 											<Route
 												exact
