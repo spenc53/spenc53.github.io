@@ -31,7 +31,7 @@ const AppBar = (props) => {
 			justify="between"
 			background="brand"
 			pad={{ left: "medium", right: "small", vertical: "small" }}
-			style={{ zIndex: "1" }}
+			style={{ zIndex: "1", width: "100%" }}
 			{...props}
 		/>
 	);
@@ -52,20 +52,22 @@ class App extends Component {
 
 	render() {
 		return (
-			<Grommet theme={theme}>
+			<Grommet style={{height:'100%'}} theme={theme}>
 				<Router>
 					<ResponsiveContext.Consumer>
 						{size => (
 							<Box
 								direction="row"
-								flex
 								background={{
 									dark: true,
 									color: "accent-1"
 								}}
 								overflow={{ horizontal: "hidden" }}
 							>
-								<Box flex>
+								<Box
+									margin={{bottom: 'medium'}}
+								 	style={{width: '100%'}}
+								>
 									<AppBar>
 										<Heading margin="none" level="2">
 											Spencer Seeger
@@ -80,7 +82,7 @@ class App extends Component {
 											}
 										/>
 									</AppBar>
-									<Box fill>
+									<Box style={{width: '100%'}}>
 										<Switch>
 											<Route
 												exact
@@ -100,7 +102,7 @@ class App extends Component {
 	}
 
 	SideNav(props) {
-    console.log(props.size);
+    	console.log(props.size);
 
 		if (props.size !== "small") {
 			return (

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Box, Button, Grommet, Heading, Image, ResponsiveContext, Layer, Collapsible, Paragraph, Tab } from 'grommet';
+import { Box, Heading, Image, ResponsiveContext, Paragraph, Tab } from 'grommet';
 import byuLogo from '../../byu-logo.png';
 
 class HomePage extends Component {
@@ -8,7 +8,7 @@ class HomePage extends Component {
         return (
             <ResponsiveContext.Consumer>
                 {size => (
-                    <Box flex margin={{ horizontal: "small" }} align="center">
+                    <Box style={{width: '100%'}} margin={{ horizontal: "small" }} align="center" overflow={{vertical: "scroll"}}>
                         <Box align="center">
                             <Heading level="1">Spencer Seeger</Heading>
                             <Box align="center" width="medium">
@@ -35,8 +35,8 @@ class HomePage extends Component {
                                 <Tab />I am mostly a backend developer but, I have started to dabble in front end stuff. My interests lie in lots of technology stuff. I love reading and learning about new frameworks, languages, and pretty much anything programming related. In my free time, I like hitting up the gym, playing video games with my wife, and working on my side projects. I have started quite a few and, you should check them out (or just read up on them as some of them are kinda secret haha)!
 										</Paragraph>
                             <Paragraph fill>
-                                <Tab />As far as programming skill goes, my strength lies in java (including the springboot framework and hibernate) and react. I am also have a decent amount of skill in SQL, android dev, the flutter framework, and python. I have used all of these extensivly within my profession and my side projects. However, these are not the only languages I know, I have expeirence with R, Haskell, exlier,
-										</Paragraph>
+                                <Tab />As far as programming skill goes, my strength lies in java (including the springboot framework and hibernate) and react. I am also have a decent amount of skill in SQL, android dev, the flutter framework, and python. I have used all of these extensivly within my profession and my side projects. I also love to learn langauges and have used quite a few! One that I think is quite fascinating is Haskell. It's lazy evaluation is a cool feature that I like to use to find creative solutions to problems.
+                            </Paragraph>
                         </Box>
                         <Box align='center'>
                             <Heading margin={{ top: "large", bottom: "none" }} level="1">Education</Heading>
