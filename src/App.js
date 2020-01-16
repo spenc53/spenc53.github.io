@@ -62,6 +62,7 @@ class App extends Component {
 									dark: true,
 									color: "accent-1"
 								}}
+								style={{minHeight:'100%'}}
 								overflow={{ horizontal: "hidden" }}
 							>
 								<Box
