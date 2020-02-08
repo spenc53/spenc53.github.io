@@ -174,7 +174,7 @@ class App extends Component {
 				>
 					<Box margin={{ horizontal: "small" }}>
 						<Link
-							to="/projects"
+							to="/#/projects"
 							style={{ textDecoration: "none", color: "inherit" }}
 							onClick={() => this.setState({ showSidebar: false })}
 						>
