@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.js": "/static/js/main.fb255159.chunk.js",
-    "main.js.map": "/static/js/main.fb255159.chunk.js.map",
+    "main.js": "/static/js/main.b83c3281.chunk.js",
+    "main.js.map": "/static/js/main.b83c3281.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.ac53febd.js",
     "runtime~main.js.map": "/static/js/runtime~main.ac53febd.js.map",
-    "static/js/2.921d8611.chunk.js": "/static/js/2.921d8611.chunk.js",
-    "static/js/2.921d8611.chunk.js.map": "/static/js/2.921d8611.chunk.js.map",
+    "static/js/2.2ce30688.chunk.js": "/static/js/2.2ce30688.chunk.js",
+    "static/js/2.2ce30688.chunk.js.map": "/static/js/2.2ce30688.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.ff6ee47e44e9103a153591baa19eae81.js": "/precache-manifest.ff6ee47e44e9103a153591baa19eae81.js",
+    "precache-manifest.c76429446c65e6924a017da9800f604d.js": "/precache-manifest.c76429446c65e6924a017da9800f604d.js",
     "service-worker.js": "/service-worker.js",
     "static/media/Spencer_Seeger_Resume.pdf": "/static/media/Spencer_Seeger_Resume.24b6d298.pdf",
-    "static/media/byu-logo.png": "/static/media/byu-logo.8c826474.png"
+    "static/media/byu-logo.png": "/static/media/byu-logo.8c826474.png",
+    "static/media/pystudio.png": "/static/media/pystudio.9694bde7.png"
   }
 }

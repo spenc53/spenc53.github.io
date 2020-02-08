@@ -1,15 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "524f1312ed679043e4563d3ad248dbad",
+    "revision": "27ca928ddf2f8aa1763be04f90f2892c",
     "url": "/index.html"
   },
   {
-    "revision": "e01a9ef2ab12a97f2063",
-    "url": "/static/js/2.921d8611.chunk.js"
+    "revision": "49209b68c575d5293d40",
+    "url": "/static/js/2.2ce30688.chunk.js"
   },
   {
-    "revision": "a17a1e367b1ec907efcc",
-    "url": "/static/js/main.fb255159.chunk.js"
+    "revision": "e5866d8ff73219adbecd",
+    "url": "/static/js/main.b83c3281.chunk.js"
   },
   {
     "revision": "b78327512a92b527706c",
@@ -22,5 +22,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "8c826474f2b497b1347266ca281ecece",
     "url": "/static/media/byu-logo.8c826474.png"
+  },
+  {
+    "revision": "9694bde71035b4c5f9b60e56fb132025",
+    "url": "/static/media/pystudio.9694bde7.png"
   }
 ]);
