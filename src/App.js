@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Box, Button, Grommet, Heading, ResponsiveContext, Layer, Collapsible } from 'grommet';
 import { Menu, FormClose, DocumentPdf, Projects, Linkedin } from 'grommet-icons';
-import { BrowserRouter as Router, Route, Switch, withRouter, Link } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch, withRouter, Link } from 'react-router-dom';
 
 import HomePage from './pages/home/HomePage';
 import ProjectPage from './pages/projects/ProjectPage';
