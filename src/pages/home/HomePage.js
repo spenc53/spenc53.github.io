@@ -30,16 +30,17 @@ class HomePage extends Component {
                             ></Box>
                         </Box>
                         <Box width="large" align="center">
-                            <Heading margin={{ top: "large", bottom: "none" }} level="1">About Me</Heading>
+                            <Heading margin={{ top: "large", bottom: "none" }} level="2">About Me</Heading>
                             <Paragraph fill>
-                                <Tab />I am mostly a backend developer but, I have started to dabble in front end stuff. My interests lie in lots of technology stuff. I love reading and learning about new frameworks, languages, and pretty much anything programming related. In my free time, I like hitting up the gym, playing video games with my wife, and working on my side projects. I have started quite a few and, you should check them out (or just read up on them as some of them are kinda secret haha)!
-										</Paragraph>
+                                <Tab/>
+                                Hi, I'm Spencer Seeger! I'm a software engineer and I love to code, learn, and build things! If I think of an idea I think would be fun to try, I sit down and try it out! 
+                            </Paragraph>
                             <Paragraph fill>
-                                <Tab />As far as programming skill goes, my strength lies in java (including the springboot framework and hibernate) and react. I am also have a decent amount of skill in SQL, android dev, the flutter framework, and python. I have used all of these extensivly within my profession and my side projects. I also love to learn langauges and have used quite a few! One that I think is quite fascinating is Haskell. It's lazy evaluation is a cool feature that I like to use to find creative solutions to problems.
+                                <Tab />Currently, I work at Sam's Club Technology helping develop a chatbot platform. As part of this project, I have helped develop a platform which Sam's Club uses to in both the clubs and on their online site. Online, the chat bot is used to help resolve members questions. The chat bot can asnwer simple questions or it can help a member start the return process of an item. Another use for this chat bot platform is "Ask Sam". "Ask Sam" is a Siri-like digital assistant for associates in the club. Some things Ask Sam is able to do is help associates know who is working next, how to prepare food, and check product avaiablity.
                             </Paragraph>
                         </Box>
                         <Box align='center'>
-                            <Heading margin={{ top: "large", bottom: "none" }} level="1">Education</Heading>
+                            <Heading margin={{ top: "large", bottom: "none" }} level="2">Education</Heading>
                             <this.EducationSection size={size}></this.EducationSection>
                         </Box>
                     </Box>

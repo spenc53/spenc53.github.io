@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Box, Button, Grommet, Heading, ResponsiveContext, Layer, Collapsible } from 'grommet';
 import { Menu, FormClose, DocumentPdf, Projects, Linkedin } from 'grommet-icons';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, withRouter, Link } from 'react-router-dom';
 
 import HomePage from './pages/home/HomePage';
+import ProjectPage from './pages/projects/ProjectPage';
 
 import resume from './Spencer_Seeger_Resume.pdf';
 
@@ -70,9 +71,15 @@ class App extends Component {
 								 	style={{width: '100%'}}
 								>
 									<AppBar>
-										<Heading margin="none" level="2">
-											Spencer Seeger
-										</Heading>
+										<Link
+											to="/"
+											style={{ textDecoration: "none", color: "inherit" }}
+											onClick={() => this.setState({ showSidebar: false })}
+										>
+											<Heading margin="none" level="2">
+												Spencer Seeger
+											</Heading>
+										</Link>
 										<Button
 											icon={<Menu />}
 											onClick={() =>
@@ -89,6 +96,11 @@ class App extends Component {
 												exact
 												path="/"
 												component={HomePage}
+											/>
+											<Route
+												exact
+												path="/projects"
+												component={ProjectPage}
 											/>
 										</Switch>
 									</Box>
@@ -114,17 +126,23 @@ class App extends Component {
 						background='accent-2'
 					>
 						<Box margin={{ horizontal: "small" }}>
-							<Box margin="small" direction="row" align="center">
-								<Projects size="medium" />
-								<Heading margin="small" level="3">Projects</Heading>
-							</Box>
+							<Link
+								to="/projects"
+								style={{ textDecoration: "none", color: "inherit" }}
+								onClick={() => this.setState({ showSidebar: false })}
+							>
+								<Box margin="small" direction="row" align="center">
+									<Projects size="medium" />
+									<Heading margin="small" level="3">Projects</Heading>
+								</Box>
+							</Link>
 							<Box margin="small" direction="row" align="center" onClick={() => window.open(resume, "_blank")}>
 								<DocumentPdf size="medium" />
 								<Heading margin="small" level="3">Resume</Heading>
 							</Box>
 							<Box margin="small" direction="row" align="center" onClick={() => window.open("https://www.linkedin.com/in/spencer-seeger-03a12a133/", "_blank")}>
 								<Linkedin size="medium" />
-								<Heading margin="small" level="3">Resume</Heading>
+								<Heading margin="small" level="3">LinkedIn</Heading>
 							</Box>
 						</Box>
 					</Box>
@@ -155,10 +173,16 @@ class App extends Component {
 					background='accent-2'
 				>
 					<Box margin={{ horizontal: "small" }}>
-						<Box margin="small" direction="row" align="center">
-							<Projects size="medium" />
-							<Heading margin="small" level="2">Projects</Heading>
-						</Box>
+						<Link
+							to="/projects"
+							style={{ textDecoration: "none", color: "inherit" }}
+							onClick={() => this.setState({ showSidebar: false })}
+						>
+							<Box margin="small" direction="row" align="center">
+								<Projects size="medium" />
+								<Heading margin="small" level="2">Projects</Heading>
+							</Box>
+						</Link>
 						<Box margin="small" direction="row" align="center" onClick={() => window.open(resume, "_blank")}>
 							<DocumentPdf size="medium" />
 							<Heading margin="small" level="2">Resume</Heading>
@@ -174,4 +198,4 @@ class App extends Component {
 	}
 }
 
-export default App;
+export default withRouter(App);
