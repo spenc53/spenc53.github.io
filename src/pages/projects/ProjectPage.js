@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
-import { Box, Heading, Paragraph } from 'grommet';
+import { Box, Heading, Image, Paragraph } from 'grommet';
 import { Link } from 'react-router-dom';
+
+import pystudioImage from '../../pystudio.png';
 
 class ProjectPage extends Component {
 
     render() {
         return (
             <Box align="center">
-                <Box align = "center" width="large" margin={{bottom:"medium"}}>
+                <Box align="center" width="large" margin={{bottom:"medium"}}>
                     <Heading level="2" margin={{bottom: "small"}}>PyStudio</Heading>
                     <Paragraph fill margin={{top: "none", bottom:"small"}}>
                         Pystudio is a RStudio like development environment for Python. This was made because of my background in statistics and seeing statisticians want to learn and use python but, wanting the comfort of using RStudio. Pystudio is built using Electron and React.
                     </Paragraph>
+                    <Box style={{height:'400px'}} >
+                        <Image fit="contain" src={pystudioImage}/>
+                    </Box>
+                    
                     <Link style={{color:"white"}} onClick={() => window.open("https://github.com/spenc53/pystudio_electron", "_blank")}>See Pystudio on Github</Link>
                 </Box>
 
