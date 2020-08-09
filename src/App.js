@@ -5,6 +5,7 @@ import { HashRouter as Router, Route, Switch, withRouter, Link } from 'react-rou
 
 import HomePage from './pages/home/HomePage';
 import ProjectPage from './pages/projects/ProjectPage';
+import PopemPage from './pages/popem/PopemPage';
 
 import resume from './Spencer_Seeger_Resume.pdf';
 
@@ -101,6 +102,11 @@ class App extends Component {
 												exact
 												path="/projects"
 												component={ProjectPage}
+											/>
+											<Route
+												exact
+												path="/popem"
+												component={PopemPage}
 											/>
 										</Switch>
 									</Box>
